@@ -61,8 +61,8 @@ Dashboard values:
 
 - Service type: `Static Site`
 - Branch: `main`
-- Build command: leave blank
-- Publish directory: `.`
+- Build command: `npm run build`
+- Publish directory: `dist`
 
 The repository also includes `render.yaml` for Render Blueprint deployments.
 
