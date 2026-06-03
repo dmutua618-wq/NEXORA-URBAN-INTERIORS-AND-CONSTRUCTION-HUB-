@@ -53,6 +53,19 @@ Open:
 http://127.0.0.1:4173/index.html
 ```
 
+## Render Deployment
+
+This project is ready to deploy on Render as a Static Site.
+
+Dashboard values:
+
+- Service type: `Static Site`
+- Branch: `main`
+- Build command: leave blank
+- Publish directory: `.`
+
+The repository also includes `render.yaml` for Render Blueprint deployments.
+
 ## Pages
 
 - `index.html`: landing page with hero slideshow, service previews, portfolio preview, testimonials, CTA, and footer.
