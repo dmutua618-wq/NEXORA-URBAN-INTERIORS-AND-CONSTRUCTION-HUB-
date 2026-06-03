@@ -1,4 +1,6 @@
-# Nexora Website
+# NEXORA-URBAN-INTERIORS-AND-CONSTRUCTION-HUB-
+
+Nexora Urban Interiors offers modern interior design, kitchen cabinets, gypsum ceilings, wardrobes, renovations, and construction services. We transform homes and commercial spaces with stylish, affordable, and high-quality interior solutions.
 
 Static multi-page website for Nexora Urban Interiors and Construction Hub.
 
@@ -17,24 +19,24 @@ Static multi-page website for Nexora Urban Interiors and Construction Hub.
 
 ```text
 Nexora/
-├── index.html
-├── about.html
-├── services.html
-├── portfolio.html
-├── gallery.html
-├── contact.html
-├── style.css
-├── main/
-│   └── main.js
-├── assets/
-│   └── nexora-logo.jpeg
-├── slideshow-images/
-│   └── img-*.jpeg
-├── portfolio-images/
-│   ├── img-*.jpeg
-│   └── portfolio-manifest.js
-└── docs/
-    └── screenshots/
+|-- index.html
+|-- about.html
+|-- services.html
+|-- portfolio.html
+|-- gallery.html
+|-- contact.html
+|-- style.css
+|-- main/
+|   `-- main.js
+|-- assets/
+|   `-- nexora-logo.jpeg
+|-- slideshow-images/
+|   `-- img-*.jpeg
+|-- portfolio-images/
+|   |-- img-*.jpeg
+|   `-- portfolio-manifest.js
+`-- docs/
+    `-- screenshots/
 ```
 
 ## Running Locally
@@ -205,21 +207,6 @@ The style is controlled by:
 .builder-credit
 ```
 
-## Rebuilding the Zip
-
-From `/home/mikel`, run:
-
-```bash
-rm -f Nexora.zip
-zip -r Nexora.zip Nexora
-```
-
-The zip will be created at:
-
-```text
-/home/mikel/Nexora.zip
-```
-
 ## Verification Checklist
 
 Before handing off changes:
@@ -231,4 +218,3 @@ Before handing off changes:
 5. Check portfolio filters and lightbox.
 6. Check gallery images.
 7. Check contact form fields.
-8. Rebuild `Nexora.zip`.
