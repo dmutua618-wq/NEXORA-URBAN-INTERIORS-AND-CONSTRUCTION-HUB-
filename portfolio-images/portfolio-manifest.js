@@ -54,5 +54,25 @@ window.NEXORA_PORTFOLIO_IMAGES = [
     file: "img-11.jpeg",
     category: "Mosquito Nets",
     title: "Four-Poster Bed Mosquito Net"
+  },
+  {
+    file: "img-12.jpeg",
+    category: "Mosquito Nets",
+    title: "Full-Height Mosquito Net with Valance"
+  },
+  {
+    file: "img-13.jpeg",
+    category: "Mosquito Nets",
+    title: "Full-Height Mosquito Net with Valance and Tiebacks"
+  },
+  {
+    file: "img-14.jpeg",
+    category: "Mosquito Nets",
+    title: "Full-Height Mosquito Net with Valance and Tiebacks"
+  },
+  {
+    file: "img-15.jpeg",
+    category: "Mosquito Nets",
+    title: "Full-Height Sheer Mosquito Net with Valance"
   }
 ];
