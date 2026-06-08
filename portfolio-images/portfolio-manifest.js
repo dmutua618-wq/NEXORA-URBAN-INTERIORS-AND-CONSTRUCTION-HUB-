@@ -74,5 +74,75 @@ window.NEXORA_PORTFOLIO_IMAGES = [
     file: "img-15.jpeg",
     category: "Mosquito Nets",
     title: "Full-Height Sheer Mosquito Net with Valance"
-  }
+  },
+  {
+    file: "img-16.jpeg",
+    category: "Mosquito Nets",
+    title: "Full-Height Sheer Mosquito Net with Valance and Tiebacks"
+  },
+  {
+    file: "img-17.jpeg",
+    category: "Mosquito Nets",
+    title: "Full-Height Sheer Mosquito Net with Valance and Tiebacks"
+  },
+{
+    file: "img-18.jpeg",
+    category: "Wardrobes",
+    title: "Walk-In Wardrobe Cabinetry"
+},
+{
+  file: "img-19.jpeg",
+  category: "Wardrobes",
+  title: "Walk-In Wardrobe Cabinetry"
+},
+{
+  file: "img-20.jpeg",
+  category: "Wardrobes",
+  title: "Walk-In Wardrobe Cabinetry"
+},
+{
+  file: "img-21.jpeg",
+  category: "Wardrobes",
+  title: "Walk-In Wardrobe Cabinetry"
+},
+{
+  file: "img-22.jpeg",
+  category: "Kitchen Cabinets",
+  title: "White Island Kitchen Cabinets"
+},
+{file: "img-23.jpeg",
+  category: "Kitchen Cabinets",
+  title: "White Island Kitchen Cabinets"
+},
+{
+  file: "img-24.jpeg",
+  category: "Kitchen Cabinets",
+  title: "White Island Kitchen Cabinets"
+},
+{
+  file: "img-25.jpeg",
+  category: "Kitchen Cabinets",
+  title: "White Island Kitchen Cabinets"
+},
+{
+  file: "img-26.jpeg",
+  category: "Kitchen Cabinets",
+  title: "White Island Kitchen Cabinets"
+},
+{
+  file: "img-27.jpeg",
+  category: "Kitchen Cabinets",
+  title: "White Island Kitchen Cabinets"  
+},
+{
+  file: "img-28.jpeg", 
+  category: "Kitchen Cabinets",
+  title: "White Island Kitchen Cabinets"     
+},
+{
+  file: "img-29.jpeg",
+  category: "Kitchen Cabinets",
+  title: "White Island Kitchen Cabinets"
+},
+
 ];
