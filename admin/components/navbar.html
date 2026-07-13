@@ -1,0 +1,172 @@
+<!-- ==========================================================
+     NEXORA ADMIN PANEL
+     Navbar Component
+========================================================== -->
+
+<header class="navbar">
+
+    <!-- ==========================================
+         Left Section
+    ========================================== -->
+
+    <div class="navbar-left">
+
+        <!-- Sidebar Toggle -->
+
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            type="button"
+            aria-label="Toggle Sidebar">
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+        <!-- Dynamic Page Title -->
+
+        <div class="page-heading">
+
+            <h1 id="pageTitle">Dashboard</h1>
+
+            <p id="pageSubtitle">
+
+                Welcome back, Administrator
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- ==========================================
+         Center Section
+    ========================================== -->
+
+    <div class="navbar-center">
+
+        <div class="search-box">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+                type="search"
+                id="globalSearch"
+                placeholder="Search projects, services, quotations..."
+                autocomplete="off">
+
+        </div>
+
+    </div>
+
+    <!-- ==========================================
+         Right Section
+    ========================================== -->
+
+    <div class="navbar-right">
+
+        <!-- Notifications -->
+
+        <button
+            class="nav-icon notification-btn"
+            type="button"
+            title="Notifications"
+            aria-label="Notifications">
+
+            <i class="fa-regular fa-bell"></i>
+
+            <span class="badge">
+
+                0
+
+            </span>
+
+        </button>
+
+        <!-- Dark Mode -->
+
+        <button
+            class="nav-icon theme-toggle"
+            type="button"
+            title="Toggle Dark Mode"
+            aria-label="Toggle Theme">
+
+            <i class="fa-solid fa-moon"></i>
+
+        </button>
+
+        <!-- Logout -->
+
+        <button
+            class="nav-icon logout-button"
+            type="button"
+            title="Logout"
+            aria-label="Logout">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+        </button>
+
+        <!-- Profile -->
+
+        <div class="profile-menu">
+
+            <button
+                class="profile-btn"
+                type="button">
+
+                <img
+                    src="../../assets/nexora-logo.jpeg"
+                    alt="Administrator">
+
+                <div class="profile-info">
+
+                    <h4>Administrator</h4>
+
+                    <span>Super Admin</span>
+
+                </div>
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </button>
+
+            <!-- Dropdown -->
+
+            <div class="profile-dropdown">
+
+                <a href="../pages/profile.html">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    My Profile
+
+                </a>
+
+                <a href="../pages/settings.html">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                    Settings
+
+                </a>
+
+                <hr>
+
+                <button
+                    class="logout-dropdown"
+                    type="button">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    Logout
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>

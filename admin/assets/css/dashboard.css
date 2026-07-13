@@ -1,0 +1,748 @@
+/* ==========================================================
+   DASHBOARD CONTENT
+==========================================================*/
+
+.dashboard-content{
+
+    width:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:30px;
+
+}
+
+/* ==========================================================
+   WELCOME SECTION
+==========================================================*/
+
+.welcome-section{
+
+    width:100%;
+
+    background:linear-gradient(135deg,#161310,#2c241d);
+
+    border-radius:18px;
+
+    padding:40px;
+
+    color:#ffffff;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+.welcome-section::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+
+    height:350px;
+
+    background:rgba(200,148,69,.12);
+
+    border-radius:50%;
+
+    right:-120px;
+
+    top:-120px;
+
+}
+
+.welcome-section::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+
+    height:220px;
+
+    background:rgba(255,255,255,.05);
+
+    border-radius:50%;
+
+    bottom:-80px;
+
+    left:-80px;
+
+}
+
+.welcome-text{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.welcome-text h1{
+
+    color:#ffffff;
+
+    font-size:36px;
+
+    margin-bottom:12px;
+
+}
+
+.welcome-text p{
+
+    color:rgba(255,255,255,.80);
+
+    max-width:650px;
+
+    line-height:1.8;
+
+    font-size:16px;
+
+}
+
+/* ==========================================================
+   DATE DISPLAY
+==========================================================*/
+
+.dashboard-date{
+
+    position:relative;
+
+    z-index:2;
+
+    text-align:right;
+
+}
+
+.dashboard-date h2{
+
+    color:var(--primary);
+
+    font-size:22px;
+
+}
+
+.dashboard-date p{
+
+    color:rgba(255,255,255,.75);
+
+}
+
+/* ==========================================================
+   STATISTICS
+==========================================================*/
+
+.statistics{
+
+    margin-top:10px;
+
+}
+
+/* ==========================================================
+   QUICK ACTIONS
+==========================================================*/
+
+.quick-actions{
+
+    margin-top:15px;
+
+}
+
+.quick-actions h2{
+
+    margin-bottom:18px;
+
+}
+
+/* ==========================================================
+   DASHBOARD GRID
+==========================================================*/
+
+.dashboard-grid{
+
+    margin-top:10px;
+
+}
+
+/* ==========================================================
+   ANALYTICS
+==========================================================*/
+
+.analytics{
+
+    margin-top:10px;
+
+}
+
+.analytics canvas{
+
+    width:100%;
+
+    height:350px;
+
+}
+
+/* ==========================================================
+   RECENT ACTIVITY
+==========================================================*/
+
+.activity-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+.activity-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    background:var(--background);
+
+}
+
+.activity-icon{
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(200,148,69,.15);
+
+    color:var(--primary);
+
+    font-size:18px;
+
+}
+
+.activity-content{
+
+    flex:1;
+
+}
+
+.activity-content h4{
+
+    margin-bottom:4px;
+
+    font-size:15px;
+
+}
+
+.activity-content p{
+
+    font-size:13px;
+
+    color:var(--text-muted);
+
+}
+
+/* ==========================================================
+   RESPONSIVE
+==========================================================*/
+
+@media(max-width:992px){
+
+.welcome-section{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:25px;
+
+}
+
+.dashboard-date{
+
+text-align:left;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.welcome-section{
+
+padding:30px;
+
+}
+
+.welcome-text h1{
+
+font-size:28px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.welcome-section{
+
+padding:22px;
+
+}
+
+.welcome-text h1{
+
+font-size:24px;
+
+}
+
+.welcome-text p{
+
+font-size:14px;
+
+}
+
+}
+/* ==========================================================
+   PART 2 - STATISTICS CARDS ENHANCEMENTS
+==========================================================*/
+
+.stat-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.stat-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:120px;
+
+    height:120px;
+
+    right:-40px;
+
+    bottom:-40px;
+
+    background:rgba(200,148,69,.08);
+
+    border-radius:50%;
+
+}
+
+.stat-card h2{
+
+    margin-top:5px;
+
+    margin-bottom:5px;
+
+}
+
+.stat-card small{
+
+    color:var(--text-muted);
+
+    font-size:13px;
+
+}
+
+.stat-card .trend{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    margin-top:12px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+.trend-up{
+
+    color:var(--success);
+
+}
+
+.trend-down{
+
+    color:var(--danger);
+
+}
+
+/* ==========================================================
+   PART 3 - QUICK ACTIONS
+==========================================================*/
+
+.action-grid{
+
+    margin-top:10px;
+
+}
+
+.action-grid button{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:12px;
+
+}
+
+.action-grid button i{
+
+    font-size:18px;
+
+}
+
+.action-grid button:active{
+
+    transform:scale(.98);
+
+}
+
+/* ==========================================================
+   PART 4 - RECENT PROJECTS & QUOTATIONS
+==========================================================*/
+
+.dashboard-card{
+
+    transition:var(--transition);
+
+}
+
+.dashboard-card:hover{
+
+    transform:translateY(-4px);
+
+}
+
+.card-header{
+
+    padding-bottom:15px;
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.card-header h2{
+
+    font-size:20px;
+
+}
+
+.card-body{
+
+    padding-top:20px;
+
+}
+
+.recent-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+.recent-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:15px;
+
+    border:1px solid var(--border);
+
+    border-radius:12px;
+
+    transition:var(--transition);
+
+}
+
+.recent-item:hover{
+
+    background:rgba(200,148,69,.05);
+
+}
+
+.recent-info h4{
+
+    font-size:15px;
+
+    margin-bottom:5px;
+
+}
+
+.recent-info p{
+
+    font-size:13px;
+
+    color:var(--text-muted);
+
+}
+
+/* ==========================================================
+   PART 5 - ANALYTICS SECTION
+==========================================================*/
+
+.analytics .dashboard-card{
+
+    min-height:450px;
+
+}
+
+.analytics-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+}
+
+.analytics-filter{
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+.analytics-filter button{
+
+    padding:8px 16px;
+
+    border-radius:8px;
+
+    background:var(--background);
+
+    transition:var(--transition);
+
+}
+
+.analytics-filter button:hover{
+
+    background:var(--primary);
+
+    color:var(--white);
+
+}
+
+.analytics-filter button.active{
+
+    background:var(--primary);
+
+    color:var(--white);
+
+}
+
+/* ==========================================================
+   CHART CONTAINER
+==========================================================*/
+
+.chart-container{
+
+    position:relative;
+
+    width:100%;
+
+    height:360px;
+
+}
+
+/* ==========================================================
+   DASHBOARD ANIMATIONS
+==========================================================*/
+
+.fade-in{
+
+    animation:fadeIn .5s ease;
+
+}
+
+.slide-up{
+
+    animation:slideUp .6s ease;
+
+}
+
+.scale-in{
+
+    animation:scaleIn .4s ease;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+@keyframes slideUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes scaleIn{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.95);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+/* ==========================================================
+   RESPONSIVE IMPROVEMENTS
+==========================================================*/
+
+@media(max-width:992px){
+
+.analytics-header{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:15px;
+
+}
+
+.analytics-filter{
+
+flex-wrap:wrap;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.chart-container{
+
+height:300px;
+
+}
+
+.recent-item{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:10px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.analytics .dashboard-card{
+
+min-height:380px;
+
+}
+
+.chart-container{
+
+height:250px;
+
+}
+
+.analytics-filter{
+
+width:100%;
+
+}
+
+.analytics-filter button{
+
+flex:1;
+
+}
+
+}

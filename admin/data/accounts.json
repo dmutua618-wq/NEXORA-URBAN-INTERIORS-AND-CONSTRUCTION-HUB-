@@ -1,0 +1,11 @@
+[
+  {
+    "name": "Dennis Mutua",
+    "email": "dmutua618@gmail.com",
+    "passwordHash": "522c9aa97bf0d0820cf021e5740697e751269c465906cb4ad26ffae38f0aa4ee12edba9775d849027e1146074d378cc61e0ccfc5729f156dd1124c3ad5220fda",
+    "salt": "3581da06d710fe784c673d710e877fdc",
+    "confirmed": true,
+    "createdAt": "2026-07-09T18:08:11.928Z",
+    "updatedAt": "2026-07-09T18:08:57.676Z"
+  }
+]

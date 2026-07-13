@@ -53,6 +53,33 @@ Open:
 http://127.0.0.1:4173/index.html
 ```
 
+### Admin authentication server
+
+A lightweight Node backend is included for admin registration and login. Administrator accounts are created directly and the system enforces a strict limit of two admin accounts.
+
+To run it:
+
+```bash
+npm install
+cp .env.example .env
+# edit .env with your Gmail SMTP credentials and a secure JWT_SECRET
+npm start
+```
+
+For production deployments, set:
+
+```env
+NODE_ENV=production
+JWT_SECRET=replace-with-a-long-random-secret
+ALLOW_RESET_FALLBACK=false
+```
+
+Then open:
+
+```text
+http://127.0.0.1:4173/admin/login.html
+```
+
 ## Render Deployment
 
 This project is ready to deploy on Render as a Static Site.
@@ -61,10 +88,12 @@ Dashboard values:
 
 - Service type: `Static Site`
 - Branch: `main`
-- Build command: `npm run build`
-- Publish directory: `dist`
+- Build command: `npm install`
+- Start command: `npm start`
 
-The repository also includes `render.yaml` for Render Blueprint deployments.
+The repository also includes `render.yaml` for Render Blueprint deployments using the Node backend.
+
+> The admin panel and API are served through `server.js`, so Render should use a Node web service rather than a static site.
 
 ## Pages
 

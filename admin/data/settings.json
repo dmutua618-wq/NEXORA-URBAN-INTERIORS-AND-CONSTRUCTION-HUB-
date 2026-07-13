@@ -1,0 +1,43 @@
+{
+  "companyInformation": {
+    "name": "NEXORA Urban Interiors & Construction Hub",
+    "tagline": "Modern interiors, reliable construction, beautiful homes.",
+    "address": "345 Riverside Drive, Nairobi, Kenya"
+  },
+  "websiteSettings": {
+    "siteTitle": "NEXORA Urban Interiors",
+    "tagline": "Interior installation & home construction services",
+    "timezone": "EAT",
+    "language": "English"
+  },
+  "contactInformation": {
+    "phone": "+254748387844",
+    "email": "nexoraurbaninteriors@gmail.com",
+    "supportHours": "Mon-Fri 8:00am - 6:00pm"
+  },
+  "socialMedia": {
+    "instagram": "https://www.instagram.com/nexoraurban_interiors?igsh=MWJqcnU3N2RsOW56NA==",
+    "facebook": "https://www.facebook.com/share/1DVR4zkem1/",
+    "linkedin": "https://www.linkedin.com/in/davis-murimi-419515412?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+    "tiktok": "https://www.tiktok.com/@nexoraurban_interiors?_r=1&_t=ZS-97wuAxg6ylp",
+    "x": "https://x.com/nexora_interior"
+  },
+  "smtp": {
+    "host": "smtp.gmail.com",
+    "port": 465,
+    "secure": true,
+    "username": "noreply@nexora.co.ke",
+    "senderEmail": "noreply@nexora.co.ke"
+  },
+  "security": {
+    "sessionTimeout": 30,
+    "require2FA": false,
+    "passwordPolicy": "Minimum 8 characters, one uppercase, one number"
+  },
+  "appearance": {
+    "theme": "dark",
+    "primaryColor": "#c89445",
+    "logoUrl": "/assets/nexora-logo.jpeg",
+    "faviconUrl": "/assets/nexora-logo.jpeg"
+  }
+}

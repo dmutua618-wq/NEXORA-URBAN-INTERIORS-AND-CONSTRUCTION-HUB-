@@ -32,6 +32,7 @@
         <a href="portfolio.html">Projects</a>
         <a href="gallery.html">Gallery</a>
         <a href="contact.html">Contact</a>
+        <a class="btn btn-secondary" href="admin/login.html">Admin</a>
       </nav>
       <a class="btn btn-accent header-cta" href="contact.html">Book Consultation</a>
     </div>
@@ -191,34 +192,15 @@
       </div>
     </section>
 
-    <!-- Testimonials: Short client feedback cards for trust and credibility. -->
-    <section class="section section-muted testimonials-section">
+    <!-- Testimonials: Client feedback loaded dynamically from admin dashboard. -->
+    <section class="section section-muted testimonials-section" id="testimonialsContainer" style="display:none;">
       <div class="container">
         <div class="section-heading reveal">
           <p class="eyebrow">Testimonials</p>
           <h2>What Our Clients Say</h2>
           <p>Our work is measured by the comfort, clarity, and confidence our clients feel in their finished spaces.</p>
         </div>
-        <div class="testimonials-grid">
-          <article class="testimonial-card reveal">
-            <div class="review-stars" aria-label="5 star review">5/5</div>
-            <p>"Nexora transformed our apartment into a contemporary space that feels calm, elegant, and easy to live in. The finishing was excellent."</p>
-            <h3>Joseph Waithera</h3>
-            <span>Homeowner, Nairobi</span>
-          </article>
-          <article class="testimonial-card reveal">
-            <div class="review-stars" aria-label="5 star review">5/5</div>
-            <p>"They delivered our office renovation on schedule and created a workspace that instantly feels more professional and productive."</p>
-            <h3>Dennis Mutua</h3>
-            <span>Business Owner, Kenya</span>
-          </article>
-          <article class="testimonial-card reveal">
-            <div class="review-stars" aria-label="5 star review">5/5</div>
-            <p>"The curtain installation completed our rooms beautifully. The measuring was accurate, the rails are neat, and the finish feels premium."</p>
-            <h3>Amos Onyango </h3>
-            <span>Homeowner, Nairobi</span>
-          </article>
-        </div>
+        <div class="testimonials-grid" id="testimonialsList"></div>
       </div>
     </section>
 
@@ -245,9 +227,11 @@
         <p>Interior & Build Solutions</p>
         <p class="footer-desc">Transforming ordinary spaces into elegant, functional, and visually impressive environments through innovative design concepts.</p>
         <div class="social-links">
-          <a href="#" aria-label="Instagram">Instagram</a>
-          <a href="#" aria-label="Facebook">Facebook</a>
-          <a href="#" aria-label="LinkedIn">LinkedIn</a>
+          <a href="https://www.instagram.com/nexoraurban_interiors?igsh=MWJqcnU3N2RsOW56NA==" aria-label="Instagram">Instagram</a>
+          <a href="https://www.facebook.com/share/1DVR4zkem1/" aria-label="Facebook">Facebook</a>
+          <a href="https://www.linkedin.com/in/davis-murimi-419515412?utm_source=share_via&utm_content=profile&utm_medium=member_android" aria-label="LinkedIn">LinkedIn</a>
+          <a href="https://www.tiktok.com/@nexoraurban_interiors?_r=1&_t=ZS-97wuAxg6ylp" aria-label="TikTok">TikTok</a>
+          <a href="https://x.com/nexora_interior" aria-label="X (Twitter)">X (Twitter)</a>
         </div>
       </div>
       <div class="footer-section">
@@ -259,6 +243,7 @@
           <li><a href="portfolio.html">Projects</a></li>
           <li><a href="gallery.html">Gallery</a></li>
           <li><a href="contact.html">Contact</a></li>
+          <li><a href="admin/login.html">Admin Login</a></li>
         </ul>
       </div>
       <div class="footer-section">
@@ -282,7 +267,7 @@
       <div class="footer-links">
         <a href="#">Privacy Policy</a>
         <a href="#">Terms of Service</a>
-        <span class="builder-credit">Built by Prince Dennis Labs</span>
+        <span class="builder-credit">Built by Dennis Digital Labs & AI</span>
       </div>
     </div>
   </footer>
@@ -294,5 +279,39 @@
   </svg>
   </a>
   <script src="main/main.js"></script>
+  <script>
+    // Load approved testimonials from admin data
+    async function loadTestimonials() {
+      try {
+        const response = await fetch('admin/data/testimonials.json');
+        const testimonials = await response.json();
+        const approved = testimonials.filter(t => t.status === 'Approved').slice(0, 3);
+        
+        if (approved.length > 0) {
+          const container = document.getElementById('testimonialsContainer');
+          const list = document.getElementById('testimonialsList');
+          
+          list.innerHTML = approved.map(t => `
+            <article class="testimonial-card reveal">
+              <div class="review-stars" aria-label="${t.rating} star review">${t.rating}/5</div>
+              <p>"${t.message}"</p>
+              <h3>${t.customerName}</h3>
+              <span>${t.company || 'Client'}</span>
+            </article>
+          `).join('');
+          
+          container.style.display = '';
+        }
+      } catch (error) {
+        console.log('Testimonials will be managed from admin dashboard');
+      }
+    }
+    
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', loadTestimonials);
+    } else {
+      loadTestimonials();
+    }
+  </script>
 </body>
 </html>

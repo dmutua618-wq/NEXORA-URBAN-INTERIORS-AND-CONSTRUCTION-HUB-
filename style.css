@@ -201,6 +201,13 @@ body:not(.home) .site-header {
   transform: translateY(-1px);
 }
 
+.site-nav a.btn {
+  min-height: 40px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 0.82rem;
+}
+
 .btn-accent,
 .btn-primary {
   background: var(--accent);

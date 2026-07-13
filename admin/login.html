@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Nexora Admin Login</title>
+
+        <link rel="stylesheet"
+            href="assets/css/login.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="login-container">
+
+    <!-- LEFT PANEL -->
+
+    <div class="login-banner">
+
+        <div class="overlay"></div>
+
+        <div class="banner-content">
+
+            <img src="../assets/nexora-logo.jpeg"
+                 alt="Nexora Logo"
+                 class="logo">
+
+            <h1>NEXORA</h1>
+
+            <h3>Urban Interiors & Construction Hub</h3>
+
+            <p>
+
+                Welcome back.
+
+                Manage projects, services,
+                gallery, quotations and everything
+                from one secure dashboard.
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- RIGHT PANEL -->
+
+    <div class="login-form-section">
+
+        <div class="auth-card">
+
+            <div class="auth-switch">
+                <button type="button" class="auth-tab active" data-target="login">Login</button>
+                <button type="button" class="auth-tab" data-target="register">Register</button>
+            </div>
+
+            <form class="login-form active" data-mode="login">
+
+                <h2>Administrator Login</h2>
+
+                <p>
+
+                    Sign in to continue to the
+                    Nexora Admin Panel.
+
+                </p>
+
+                <div class="input-group">
+
+                    <label>Email Address</label>
+
+                    <input
+                        type="email"
+                        placeholder="Enter your email"
+                        required>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Password</label>
+
+                    <div class="password-box">
+
+                        <input
+                            type="password"
+                            placeholder="Enter your password"
+                            required>
+
+                        <i class="fa-solid fa-eye"></i>
+
+                    </div>
+
+                </div>
+
+                <div class="options">
+
+                    <label>
+
+                        <input type="checkbox">
+
+                        Remember Me
+
+                    </label>
+
+                    <div class="auth-links">
+                        <a href="#" id="forgot-password">Forgot password?</a>
+                        <a href="#" class="switch-to-register">Create an account</a>
+                    </div>
+
+                </div>
+
+                <button type="submit">
+
+                    Login
+
+                </button>
+
+            </form>
+
+            <form class="register-form" data-mode="register">
+
+                <h2>Create Admin Account</h2>
+
+                <p>
+
+                    Register a new admin account to manage the Nexora dashboard.
+
+                </p>
+
+                <div class="input-group">
+
+                    <label>Full Name</label>
+
+                    <input
+                        type="text"
+                        placeholder="Enter your full name"
+                        required>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Email Address</label>
+
+                    <input
+                        type="email"
+                        placeholder="Enter your email"
+                        required>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Password</label>
+
+                    <div class="password-box">
+
+                        <input
+                            type="password"
+                            placeholder="Create a password"
+                            required>
+
+                        <i class="fa-solid fa-eye"></i>
+
+                    </div>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Confirm Password</label>
+
+                    <div class="password-box">
+
+                        <input
+                            type="password"
+                            placeholder="Confirm your password"
+                            required>
+
+                        <i class="fa-solid fa-eye"></i>
+
+                    </div>
+
+                </div>
+
+                <div class="options">
+
+                    <span>Already have an admin account?</span>
+
+                    <a href="#" class="switch-to-login">
+
+                        Sign in
+
+                    </a>
+
+                </div>
+
+                <button type="submit">
+
+                    Create Account
+
+                </button>
+
+            </form>
+
+            <div class="copyright">
+
+                © 2026 Nexora Urban Interiors & Construction Hub
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Confirmation Code Modal -->
+<div id="confirmationModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:9999; justify-content:center; align-items:center;">
+    <div style="background:white; padding:30px; border-radius:8px; max-width:400px; box-shadow:0 4px 6px rgba(0,0,0,0.1);">
+        <h3 style="margin-top:0;">Enter Confirmation Code</h3>
+        <p>A confirmation code has been sent to your email address. Please enter it below:</p>
+        <input type="text" id="confirmationCodeInput" placeholder="Enter 6-digit code" style="width:100%; padding:10px; border:1px solid #ccc; border-radius:4px; font-size:16px; box-sizing:border-box;">
+        <div style="margin-top:20px; display:flex; gap:10px; justify-content:flex-end;">
+            <button id="confirmationCancel" type="button" style="padding:10px 20px; background:#ccc; border:none; border-radius:4px; cursor:pointer;">Cancel</button>
+            <button id="confirmationSubmit" type="button" style="padding:10px 20px; background:#007bff; color:white; border:none; border-radius:4px; cursor:pointer;">Confirm</button>
+        </div>
+    </div>
+</div>
+
+<script src="assets/js/auth.js"></script>
+<script src="assets/js/login.js"></script>
+
+<script>
+    // If page is served from a different origin (e.g., Live Server), point API calls to local backend
+    (function(){
+        try{
+            var backendPort = '4173';
+            if(location.port !== backendPort){
+                window.__NEXORA_API_BASE__ = location.protocol + '//' + location.hostname + ':' + backendPort;
+            }
+        }catch(e){console.warn('Could not set API base', e);}
+    })();
+</script>
+
+</body>
+
+</html>

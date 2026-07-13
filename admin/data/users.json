@@ -1,0 +1,13 @@
+[
+  {
+    "id": "user-1",
+    "name": "Prince Dennis",
+    "email": "prince@nexora.co.ke",
+    "phone": "+254748387844",
+    "role": "Super Admin",
+    "status": "Active",
+    "lastLogin": "2026-07-09T11:22:00.000Z",
+    "createdAt": "2025-12-01T08:15:00.000Z",
+    "active": true
+  }
+]

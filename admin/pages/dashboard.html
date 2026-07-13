@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | Nexora Admin Panel</title>
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- Shared Components -->
+
+        <link rel="stylesheet"
+            href="../assets/css/components.css">
+
+    <!-- Dashboard Styles -->
+
+        <link rel="stylesheet"
+            href="../assets/css/dashboard.css">
+
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+
+    <div id="sidebar"></div>
+
+    <!-- Main Content -->
+
+    <div class="dashboard-container">
+
+        <!-- Navbar -->
+
+        <div id="navbar"></div>
+
+        <!-- Dashboard Content -->
+
+        <main class="dashboard-content">
+
+            <!-- Welcome Section -->
+
+            <section class="welcome-section">
+
+                <div class="welcome-text">
+
+                    <h1>
+
+                        Welcome back, Davis Murimi👋
+
+                    </h1>
+
+                    <p>
+
+                        Manage projects, services, gallery,
+                        quotations and website content from one place.
+
+                    </p>
+
+                </div>
+
+            </section>
+
+            <!-- Statistics -->
+
+            <section class="statistics">
+
+                <!-- Total Projects -->
+
+                <div class="stat-card">
+
+                    <i class="fa-solid fa-building"></i>
+
+                    <h2>0</h2>
+
+                    <p>Total Projects</p>
+
+                </div>
+
+                <!-- Services -->
+
+                <div class="stat-card">
+
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+
+                    <h2>0</h2>
+
+                    <p>Services</p>
+
+                </div>
+
+                <!-- Gallery -->
+
+                <div class="stat-card">
+
+                    <i class="fa-solid fa-images"></i>
+
+                    <h2>0</h2>
+
+                    <p>Gallery Images</p>
+
+                </div>
+
+                <!-- Quotations -->
+
+                <div class="stat-card">
+
+                    <i class="fa-solid fa-file-invoice-dollar"></i>
+
+                    <h2>0</h2>
+
+                    <p>Pending Quotations</p>
+
+                </div>
+
+            </section>
+
+            <!-- Quick Actions -->
+
+            <section class="quick-actions">
+
+                <h2>Quick Actions</h2>
+
+                <div class="action-grid">
+
+                    <button>Add Project</button>
+
+                    <button>Add Service</button>
+
+                    <button>Upload Gallery</button>
+
+                    <button>Create Blog Post</button>
+
+                </div>
+
+            </section>
+
+            <!-- Dashboard Grid -->
+
+            <section class="dashboard-grid">
+
+                <!-- Recent Projects -->
+
+                <div class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <h2>
+
+                            Recent Projects
+
+                        </h2>
+
+                    </div>
+
+                    <div class="card-body">
+
+                        <p>
+
+                            No projects available.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- Recent Quotations -->
+
+                <div class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <h2>
+
+                            Recent Quotations
+
+                        </h2>
+
+                    </div>
+
+                    <div class="card-body">
+
+                        <p>
+
+                            No quotation requests.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- Analytics -->
+
+            <section class="analytics">
+
+                <div class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <h2>
+
+                            Analytics Overview
+
+                        </h2>
+
+                    </div>
+
+                    <div class="card-body">
+
+                        <canvas id="dashboardChart"></canvas>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+
+        <div id="footer"></div>
+
+    </div>
+
+    <!-- Loader -->
+
+    <div id="loader"></div>
+
+    <!-- Shared Components -->
+
+    <script src="../assets/js/components.js"></script>
+    <script src="../assets/js/auth.js"></script>
+    <script src="../assets/js/utils.js"></script>
+    <script src="../assets/js/init.js"></script>
+    <script src="../assets/js/page-loader.js"></script>
+
+</body>
+
+</html>
