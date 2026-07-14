@@ -178,7 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     async function handleLogin(event) {
         event.preventDefault();
-
+        console.log('[NEXORA] handleLogin fired', { path: location.pathname });
         const emailInput = loginForm.querySelector('input[type="email"]');
         const passwordInput = loginForm.querySelector('input[type="password"]');
         const loginButton = loginForm.querySelector("button");
@@ -347,6 +347,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (loginForm) {
         loginForm.addEventListener("submit", handleLogin);
+        // Redundant click handler to catch cases where form submit isn't triggered on some mobile browsers
+        (function attachSubmitClick(){
+            try{
+                const submitBtn = loginForm.querySelector("button[type='submit']") || loginForm.querySelector('button');
+                if(submitBtn){
+                    submitBtn.addEventListener('click', function(evt){
+                        console.log('[NEXORA] login submit button clicked');
+                        // allow normal submit flow which will trigger the form submit handler
+                        // but call handleLogin directly as a fallback
+                        if(!evt.defaultPrevented){
+                            try{ handleLogin(evt); }catch(e){ console.warn('fallback handleLogin error', e); }
+                        }
+                    });
+                }
+            }catch(e){ console.warn('attachSubmitClick failed', e); }
+        })();
     }
 
     if (registerForm) {
