@@ -91,6 +91,19 @@ app.get(['/admin', '/admin/'], (req, res) => {
   res.sendFile(path.join(adminRoot, 'login.html'));
 });
 
+app.get('/admin/*', (req, res, next) => {
+  const requestedPath = req.path.replace(/^\/admin/, '') || '/login.html';
+  const resolvedPath = path.join(adminRoot, requestedPath);
+  if (!resolvedPath.startsWith(adminRoot)) {
+    return res.status(400).send('Invalid admin path.');
+  }
+  res.sendFile(resolvedPath, (err) => {
+    if (err) {
+      next();
+    }
+  });
+});
+
 const uploadDir = path.join(__dirname, 'uploads', 'gallery');
 const storage = multer.diskStorage({
   destination: async (req, file, cb) => {
@@ -794,6 +807,16 @@ app.get('/api/admin/analytics', authMiddleware, async (req, res) => {
   } catch (err) {
     res.status(500).json({ message: err.message || 'Unable to build analytics.' });
   }
+});
+
+app.get('/healthz', (req, res) => {
+  res.json({
+    status: 'ok',
+    adminRoot: '/admin',
+    adminLogin: '/admin/login.html',
+    uptimeSeconds: process.uptime(),
+    timestamp: new Date().toISOString()
+  });
 });
 
 app.listen(PORT, () => {
