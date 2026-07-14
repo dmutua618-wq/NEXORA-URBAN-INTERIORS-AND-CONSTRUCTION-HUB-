@@ -81,7 +81,15 @@ app.use(cors({
   credentials: true
 }));
 app.use(express.json());
-app.use(express.static(path.join(__dirname)));
+
+const publicRoot = path.join(__dirname);
+const adminRoot = path.join(__dirname, 'admin');
+app.use(express.static(publicRoot));
+app.use('/admin', express.static(adminRoot, { index: 'login.html' }));
+
+app.get(['/admin', '/admin/'], (req, res) => {
+  res.sendFile(path.join(adminRoot, 'login.html'));
+});
 
 const uploadDir = path.join(__dirname, 'uploads', 'gallery');
 const storage = multer.diskStorage({

@@ -15,7 +15,8 @@ const entries = [
   "assets",
   "main",
   "portfolio-images",
-  "slideshow-images"
+  "slideshow-images",
+  "admin"
 ];
 
 fs.rmSync(dist, { recursive: true, force: true });
