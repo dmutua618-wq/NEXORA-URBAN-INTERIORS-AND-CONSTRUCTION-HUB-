@@ -176,12 +176,23 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     })();
 
+    function getLoginPasswordInput(){
+        return loginForm.querySelector('.password-box input')
+            || loginForm.querySelector('input[type="password"]')
+            || loginForm.querySelector('input[type="text"][placeholder*="password"]');
+    }
+
     async function handleLogin(event) {
         event.preventDefault();
         console.log('[NEXORA] handleLogin fired', { path: location.pathname });
         const emailInput = loginForm.querySelector('input[type="email"]');
-        const passwordInput = loginForm.querySelector('input[type="password"]');
+        const passwordInput = getLoginPasswordInput();
         const loginButton = loginForm.querySelector("button");
+
+        if(!emailInput || !passwordInput){
+            alert('Unable to read form fields. Please refresh the page and try again.');
+            return;
+        }
 
         const email = emailInput.value.trim();
         const password = passwordInput.value.trim();
@@ -333,7 +344,7 @@ document.addEventListener("DOMContentLoaded", () => {
     (function wireLoginValidation(){
         if(!loginForm) return;
         const emailInput = loginForm.querySelector('input[type="email"]');
-        const passwordInput = loginForm.querySelector('input[type="password"]');
+        const passwordInput = getLoginPasswordInput();
         const loginButton = loginForm.querySelector('button');
         if(!emailInput || !passwordInput || !loginButton) return;
 
