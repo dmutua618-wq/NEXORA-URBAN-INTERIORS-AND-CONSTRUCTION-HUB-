@@ -653,7 +653,8 @@ font-size:1.4rem;
     left:0;
 
     width:var(--sidebar-width);
-    height:100vh;
+    height:100dvh;
+    min-height:100dvh;
 
     display:flex;
     flex-direction:column;
@@ -664,6 +665,7 @@ font-size:1.4rem;
     border-right:1px solid rgba(255,255,255,.08);
 
     overflow-y:auto;
+    -webkit-overflow-scrolling:touch;
 
     transition:var(--transition);
 
@@ -886,6 +888,7 @@ font-size:1.4rem;
 .sidebar-footer{
 
     padding:22px;
+    padding-bottom:calc(22px + env(safe-area-inset-bottom, 16px));
 
     border-top:1px solid rgba(255,255,255,.08);
 
