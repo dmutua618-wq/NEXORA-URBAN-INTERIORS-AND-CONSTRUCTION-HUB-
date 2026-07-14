@@ -242,11 +242,13 @@
 <script src="assets/js/login.js"></script>
 
 <script>
-    // If page is served from a different origin (e.g., Live Server), point API calls to local backend
+    // If page is served from local development host, point API calls to local backend.
+    // In production on Render, keep same-origin API routing.
     (function(){
         try{
             var backendPort = '4173';
-            if(location.port !== backendPort){
+            var isLocalhost = ['localhost', '127.0.0.1', '::1'].includes(location.hostname);
+            if(isLocalhost && location.port !== backendPort){
                 window.__NEXORA_API_BASE__ = location.protocol + '//' + location.hostname + ':' + backendPort;
             }
         }catch(e){console.warn('Could not set API base', e);}
